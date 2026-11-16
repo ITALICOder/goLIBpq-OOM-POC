@@ -1,0 +1,35 @@
+panic: runtime error: index out of range [1] with length 0
+
+goroutine 1 [running]:
+encoding/binary.bigEndian.Uint16(...)
+	/home/rasp/pqfix2/go/src/encoding/binary/binary.go:156
+github.com/lib/pq.(*readBuf).int16(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/buf.go:29
+github.com/lib/pq.parsePortalRowDescribe(0x6f0490890008?)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:1917 +0x374
+github.com/lib/pq.(*conn).simpleQuery(0x6f0490890008, {0x251199, 0x8})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:720 +0x364
+github.com/lib/pq.(*conn).query(0x6f0490890008, {0x251199, 0x8}, {0x557300, 0x0, 0x0})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:928 +0x5f4
+github.com/lib/pq.(*conn).QueryContext(0x6f0490890008, {0x4f0ad8?, 0x557300?}, {0x251199, 0x8}, {0x557300, 0x0, 0x0})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:905 +0x60
+database/sql.ctxDriverQuery({0x4f0ad8?, 0x557300?}, {0x7fff28edd000?, 0x6f0490890008?}, {0x0?, 0x0?}, {0x251199?, 0x4c2850?}, {0x557300?, 0x4abc80?, ...})
+	/home/rasp/pqfix2/go/src/database/sql/ctxutil.go:48 +0xa8
+database/sql.(*DB).queryDC.func1()
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1791 +0xe0
+database/sql.withLock({0x4efe90, 0x6f049087e180}, 0x6f04907c1a98)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:3621 +0x74
+database/sql.(*DB).queryDC(0x10?, {0x4f0ad8, 0x557300}, {0x0, 0x0}, 0x6f049087e180, 0x6f04908542a0, {0x251199, 0x8}, {0x0, ...})
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1786 +0x104
+database/sql.(*DB).query(0x6f049085c8f0, {0x4f0ad8, 0x557300}, {0x251199, 0x8}, {0x0, 0x0, 0x0}, 0xe0?)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1769 +0xbc
+database/sql.(*DB).QueryContext.func1(0x20?)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1747 +0x40
+database/sql.(*DB).retry(0x6f04907edce8?, 0x6f04907c1c90)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1581 +0x4c
+database/sql.(*DB).QueryContext(0x6f049085c8f0?, {0x4f0ad8?, 0x557300?}, {0x251199?, 0x2?}, {0x0?, 0x6f04907edd58?, 0x112800?})
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1746 +0x64
+database/sql.(*DB).Query(...)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1760
+main.main()
+	/home/rasp/pqfix2/mainv/pqtest.go:46 +0x2b4

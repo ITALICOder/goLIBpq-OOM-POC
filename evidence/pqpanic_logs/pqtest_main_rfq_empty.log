@@ -1,0 +1,33 @@
+panic: runtime error: slice bounds out of range [1:0]
+
+goroutine 1 [running]:
+github.com/lib/pq.(*readBuf).next(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/buf.go:46
+github.com/lib/pq.(*readBuf).byte(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/buf.go:51
+github.com/lib/pq.(*conn).processReadyForQuery(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:1722
+github.com/lib/pq.(*conn).startup(_, {{0x3f877323a0f0, 0x9}, {{0x0, 0x0}, {0x0}}, 0x1539, {0x3f877323a1c0, 0x8}, {0x3f877323a180, ...}, ...})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:1394 +0xff8
+github.com/lib/pq.(*Connector).open(0x3f877325c588, {0x4f0ad8, 0x557300})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:303 +0x674
+github.com/lib/pq.DialOpen({0x4eff08, 0x559680}, {0x3f8773212150?, 0x35080?})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:251 +0x7c
+github.com/lib/pq.Open(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:241
+github.com/lib/pq.Driver.Open({}, {0x3f8773212150?, 0x34ee4?})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:90 +0x38
+database/sql.dsnConnector.Connect(...)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:814
+database/sql.(*DB).conn(0x3f877324c8f0, {0x4f0ad8, 0x557300}, 0x1)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1436 +0x8e8
+database/sql.(*DB).PingContext.func1(0x20?)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:905 +0x38
+database/sql.(*DB).retry(0x3f877319bce8?, 0x3f877316fcb8)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1581 +0x4c
+database/sql.(*DB).PingContext(0x3f877324c8f0, {0x4f0ad8, 0x557300})
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:904 +0x54
+database/sql.(*DB).Ping(...)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:922
+main.main()
+	/home/rasp/pqfix2/mainv/pqtest.go:38 +0x1dc

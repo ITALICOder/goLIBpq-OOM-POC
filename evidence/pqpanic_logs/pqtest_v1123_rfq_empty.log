@@ -1,0 +1,33 @@
+panic: runtime error: slice bounds out of range [1:0]
+
+goroutine 1 [running]:
+github.com/lib/pq.(*readBuf).next(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/buf.go:46
+github.com/lib/pq.(*readBuf).byte(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/buf.go:51
+github.com/lib/pq.(*conn).processReadyForQuery(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:1595
+github.com/lib/pq.(*conn).startup(_, {{0x1cdc2a4aa190, 0x9}, {{0x0, 0x0}, {0x0}}, 0x1539, {0x1cdc2a4aa260, 0x8}, {0x1cdc2a4aa210, ...}, ...})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:1281 +0xf54
+github.com/lib/pq.(*Connector).open(0x1cdc2a5482c8, {0x4ef258, 0x557220})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:292 +0x6cc
+github.com/lib/pq.DialOpen({0x4ee688, 0x5595a0}, {0x1cdc2a50c150?, 0x35080?})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:243 +0x7c
+github.com/lib/pq.Open(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:233
+github.com/lib/pq.Driver.Open({}, {0x1cdc2a50c150?, 0x34ee4?})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:82 +0x38
+database/sql.dsnConnector.Connect(...)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:814
+database/sql.(*DB).conn(0x1cdc2a53c8f0, {0x4ef258, 0x557220}, 0x1)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1436 +0x8e8
+database/sql.(*DB).PingContext.func1(0x20?)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:905 +0x38
+database/sql.(*DB).retry(0x1cdc2a4e9ce8?, 0x1cdc2a4bdcb8)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1581 +0x4c
+database/sql.(*DB).PingContext(0x1cdc2a53c8f0, {0x4ef258, 0x557220})
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:904 +0x54
+database/sql.(*DB).Ping(...)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:922
+main.main()
+	/home/rasp/pqfix2/v1123/pqtest.go:38 +0x1dc

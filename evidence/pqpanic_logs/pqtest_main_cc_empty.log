@@ -1,0 +1,31 @@
+panic: pq: invalid message format; expected string terminator
+
+goroutine 1 [running]:
+github.com/lib/pq.(*readBuf).string(0x715010dba150)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/buf.go:37 +0xe4
+github.com/lib/pq.(*conn).simpleQuery(0x715010e78008, {0x251199, 0x8})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:693 +0x2f0
+github.com/lib/pq.(*conn).query(0x715010e78008, {0x251199, 0x8}, {0x557300, 0x0, 0x0})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:928 +0x5f4
+github.com/lib/pq.(*conn).QueryContext(0x715010e78008, {0x4f0ad8?, 0x557300?}, {0x251199, 0x8}, {0x557300, 0x0, 0x0})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.4-0.20260820222753-451ac10e4e85/conn.go:905 +0x60
+database/sql.ctxDriverQuery({0x4f0ad8?, 0x557300?}, {0x7ffec395e000?, 0x715010e78008?}, {0x0?, 0x0?}, {0x251199?, 0x4c2850?}, {0x557300?, 0x4abc80?, ...})
+	/home/rasp/pqfix2/go/src/database/sql/ctxutil.go:48 +0xa8
+database/sql.(*DB).queryDC.func1()
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1791 +0xe0
+database/sql.withLock({0x4efe90, 0x715010e6a180}, 0x715010dcfa98)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:3621 +0x74
+database/sql.(*DB).queryDC(0x10?, {0x4f0ad8, 0x557300}, {0x0, 0x0}, 0x715010e6a180, 0x715010dca2e0, {0x251199, 0x8}, {0x0, ...})
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1786 +0x104
+database/sql.(*DB).query(0x715010e4e8f0, {0x4f0ad8, 0x557300}, {0x251199, 0x8}, {0x0, 0x0, 0x0}, 0xe0?)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1769 +0xbc
+database/sql.(*DB).QueryContext.func1(0x20?)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1747 +0x40
+database/sql.(*DB).retry(0x715010dfbce8?, 0x715010dcfc90)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1581 +0x4c
+database/sql.(*DB).QueryContext(0x715010e4e8f0?, {0x4f0ad8?, 0x557300?}, {0x251199?, 0x2?}, {0x0?, 0x715010dfbd58?, 0x112800?})
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1746 +0x64
+database/sql.(*DB).Query(...)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1760
+main.main()
+	/home/rasp/pqfix2/mainv/pqtest.go:46 +0x2b4

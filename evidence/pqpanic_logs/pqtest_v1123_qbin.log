@@ -1,0 +1,19 @@
+panic: runtime error: index out of range [7] with length 2
+
+goroutine 1 [running]:
+encoding/binary.bigEndian.Uint64(...)
+	/home/rasp/pqfix2/go/src/encoding/binary/binary.go:202
+github.com/lib/pq.binaryDecode({0x3a99c63fc02e?, 0x0?, 0x0?}, 0x1ec040?)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/encode.go:70 +0x1d8
+github.com/lib/pq.decode(0x3a99c63fc008?, {0x3a99c63fc02e?, 0x3a99c6351bb8?, 0x8f89c?}, 0x1e9210?, 0x4a4789?)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/encode.go:57 +0x3c
+github.com/lib/pq.(*rows).Next(0x3a99c63ca1e0, {0x3a99c634c300, 0x1, 0x0?})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/rows.go:127 +0x5d4
+database/sql.(*Rows).nextLocked(0x3a99c63ce160)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:3086 +0x184
+database/sql.(*Rows).Next.func1(0x3a99c63ce160, 0x3a99c6351ce7, 0x3a99c6351ce6)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:3054 +0x64
+database/sql.(*Rows).Next(0x3a99c63ce160)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:3055 +0x58
+main.main()
+	/home/rasp/pqfix2/v1123/pqtest.go:52 +0x334

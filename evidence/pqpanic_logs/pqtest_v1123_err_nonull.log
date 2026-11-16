@@ -1,0 +1,33 @@
+panic: pq: invalid message format; expected string terminator
+
+goroutine 1 [running]:
+github.com/lib/pq.(*readBuf).string(0x52e272702120)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/buf.go:37 +0xe4
+github.com/lib/pq.parseError(0x52e272702120, {0x0, 0x0})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/error.go:130 +0xe4
+github.com/lib/pq.(*conn).recv(0x52e272842008)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:1124 +0xe8
+github.com/lib/pq.(*conn).startup(_, {{0x52e272704190, 0x9}, {{0x0, 0x0}, {0x0}}, 0x1539, {0x52e272704260, 0x8}, {0x52e272704210, ...}, ...})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:1255 +0xae4
+github.com/lib/pq.(*Connector).open(0x52e2728222c8, {0x4ef258, 0x557220})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:292 +0x6cc
+github.com/lib/pq.DialOpen({0x4ee688, 0x5595a0}, {0x52e272766150?, 0x35080?})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:243 +0x7c
+github.com/lib/pq.Open(...)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:233
+github.com/lib/pq.Driver.Open({}, {0x52e272766150?, 0x34ee4?})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/conn.go:82 +0x38
+database/sql.dsnConnector.Connect(...)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:814
+database/sql.(*DB).conn(0x52e2728168f0, {0x4ef258, 0x557220}, 0x1)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1436 +0x8e8
+database/sql.(*DB).PingContext.func1(0x20?)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:905 +0x38
+database/sql.(*DB).retry(0x52e272743ce8?, 0x52e272717cb8)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:1581 +0x4c
+database/sql.(*DB).PingContext(0x52e2728168f0, {0x4ef258, 0x557220})
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:904 +0x54
+database/sql.(*DB).Ping(...)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:922
+main.main()
+	/home/rasp/pqfix2/v1123/pqtest.go:38 +0x1dc

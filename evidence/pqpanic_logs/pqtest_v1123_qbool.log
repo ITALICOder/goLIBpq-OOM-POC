@@ -1,0 +1,17 @@
+panic: runtime error: index out of range [0] with length 0
+
+goroutine 1 [running]:
+github.com/lib/pq.textDecode(0x3?, {0x2c5f065c402e?, 0x0?, 0x1ec040?}, 0x65c4500?)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/encode.go:118 +0x4b0
+github.com/lib/pq.decode(0x2c5f065c4008?, {0x2c5f065c402e?, 0x2c5f06499bb8?, 0x8f89c?}, 0x1e9210?, 0x4a4789?)
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/encode.go:59 +0x4c
+github.com/lib/pq.(*rows).Next(0x2c5f065921e0, {0x2c5f06494300, 0x1, 0x0?})
+	/home/rasp/go/pkg/mod/github.com/lib/pq@v1.12.3/rows.go:127 +0x5d4
+database/sql.(*Rows).nextLocked(0x2c5f06596160)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:3086 +0x184
+database/sql.(*Rows).Next.func1(0x2c5f06596160, 0x2c5f06499ce7, 0x2c5f06499ce6)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:3054 +0x64
+database/sql.(*Rows).Next(0x2c5f06596160)
+	/home/rasp/pqfix2/go/src/database/sql/sql.go:3055 +0x58
+main.main()
+	/home/rasp/pqfix2/v1123/pqtest.go:52 +0x334
