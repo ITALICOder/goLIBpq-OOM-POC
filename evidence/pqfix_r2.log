@@ -1,0 +1,12 @@
+connecting 10 times to host=127.0.0.1 port=5433 user=scan dbname=scan sslmode=disable connect_timeout=10
+2 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+9 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+6 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+1 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+7 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+3 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+8 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+5 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+4 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+0 ping: pq: lost synchronization with server: got message type "(H) CopyOutResponse", length 1414811691
+ALL_DONE

@@ -1,0 +1,8 @@
+[  961.072225] [   3028]   112  3028      201       67        0       67         0    98304        0             0 dhcpcd
+[  961.072228] [   6106]     0  6106     1260       76       32       44         0   114688       96             0 sshd
+[  961.072230] [   6112]  1000  6112     1277      146       70       76         0   114688      128             0 sshd
+[  961.072233] [   6113]  1000  6113      450       70       32       38         0    98304        0             0 bash
+[  961.072235] [   6529]  1000  6529   186287     6796     6752       44         0  1081344      320             0 python3
+[  961.072238] [   6531]  1000  6531  6778798   223217   223200       17         0  7749632   492160             0 clientmain_arm6
+[  961.072241] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=init.scope,mems_allowed=0-7,global_oom,task_memcg=/,task=clientmain_arm6,pid=6531,uid=1000
+[  961.072276] Out of memory: Killed process 6531 (clientmain_arm6) total-vm:108460768kB, anon-rss:3571200kB, file-rss:272kB, shmem-rss:0kB, UID:1000 pgtables:7568kB oom_score_adj:0
